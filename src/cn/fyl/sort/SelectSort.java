@@ -1,8 +1,8 @@
 package cn.fyl.sort;
 
-import java.util.logging.Level;
-
 /**
+ * 选择排序法：直接选择排序、堆排序
+ * 直接选择排序
  * Created by Fang on 2017/10/31.
  */
 public class SelectSort {
@@ -44,22 +44,3 @@ public class SelectSort {
 
 }
 
-//数据包装类
-class DataWrap implements Comparable<DataWrap>{
-    int data;
-    String flag;
-
-    public DataWrap(int data,String flag){
-        this.data = data;
-        this.flag = flag;
-    }
-
-    public String toString(){
-        return data + flag;
-    }
-
-    @Override
-    public int compareTo(DataWrap o) {
-        return this.data > o.data ? 1 : (this.data == o.data ? 0 : -1);
-    }
-}
