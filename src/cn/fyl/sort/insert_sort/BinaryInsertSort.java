@@ -5,28 +5,35 @@ import cn.fyl.sort.DataWrap;
 import java.util.Arrays;
 
 /**
- * 插入排序：直接插入排序、shell排序和折半插入排序等
- * 直接插入排序
+ * 折半插入排序：
  * Created by Fang on 2018/1/20.
  */
-public class InsertSort {
-    public static void insertSort(DataWrap[] data){
+public class BinaryInsertSort {
+    public static void binaryInsertSort(DataWrap[] data){
         System.out.print("开始排序：\n");
         int arrayLength = data.length;
         for (int i = 1; i < arrayLength; i++){
             //当整体后移时，保证data[i]的值不会丢失
             DataWrap tmp = data[i];
-            //i索引处的值已经比前面所有值都大，表明已经有序，无需插入
-            //i-1索引之前的数据已经有序，i-1索引处元素的值就是最大值
-            if (data[i].compareTo(data[i-1]) < 0){
-                int j = i -1;
-                //整体后移一格
-                for (; j >= 0 && data[j].compareTo(tmp) > 0; j--){
-                    data[j+1] = data[j];
+            int low = 0;
+            int high = i - 1;
+            while (low <= high){
+                //找出high、low中间索引
+                int mid = (high+low)/2;
+                //如果tmp值大于中间元素的值
+                if (tmp.compareTo(data[mid]) > 0){
+                    //限制在索引大于mid的那一半中搜索
+                    low = mid + 1;
+                }else{
+                    //限制在索引小于mid的那一半中搜索
+                    high = mid - 1;
                 }
-                //将tmp值插入合适的位置
-                data[j+1] = tmp;
             }
+            //将low到i处的所有元素向后整体移一位
+            for (int j = i; j > low; j--){
+                data[j] = data[j-1];
+            }
+            data[low] = tmp;
             System.out.println(Arrays.toString(data));
         }
     }
@@ -45,7 +52,7 @@ public class InsertSort {
                 new DataWrap(5,""),
         };
         System.out.println("排序之前：\n"+Arrays.toString(data));
-        insertSort(data);
+        binaryInsertSort(data);
         System.out.println("排序之后：\n"+Arrays.toString(data));
     }
 }
