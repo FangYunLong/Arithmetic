@@ -1,4 +1,6 @@
-package cn.fyl.sort;
+package cn.fyl.sort.select_sort;
+
+import cn.fyl.sort.DataWrap;
 
 /**
  * 选择排序法：直接选择排序、堆排序

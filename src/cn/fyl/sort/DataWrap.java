@@ -4,7 +4,7 @@ package cn.fyl.sort;
  * 数据包装类
  * Created by Fang on 2017/11/15.
  */
-class DataWrap implements Comparable<DataWrap>{
+public class DataWrap implements Comparable<DataWrap>{
     int data;
     String flag;
 

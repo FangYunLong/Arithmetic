@@ -1,4 +1,6 @@
-package cn.fyl.sort;
+package cn.fyl.sort.exchange_sort;
+
+import cn.fyl.sort.DataWrap;
 
 import java.util.Arrays;
 
@@ -8,7 +10,7 @@ import java.util.Arrays;
  */
 public class QuickSort {
 
-    public static void swap(DataWrap[] data,int i,int j){
+    public static void swap(DataWrap[] data, int i, int j){
         DataWrap tmp;
         tmp = data[i];
         data[i] = data[j];
