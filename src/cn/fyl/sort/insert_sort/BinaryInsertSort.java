@@ -40,16 +40,14 @@ public class BinaryInsertSort {
 
     public static void main(String[] args) {
         DataWrap[] data = {
-                new DataWrap(9,""),
-                new DataWrap(1,""),
+                new DataWrap(3,""),
                 new DataWrap(2,""),
                 new DataWrap(5,""),
-                new DataWrap(7,""),
                 new DataWrap(4,""),
+                new DataWrap(1,""),
                 new DataWrap(8,""),
                 new DataWrap(6,""),
-                new DataWrap(3,""),
-                new DataWrap(5,""),
+                new DataWrap(7,""),
         };
         System.out.println("排序之前：\n"+Arrays.toString(data));
         binaryInsertSort(data);
