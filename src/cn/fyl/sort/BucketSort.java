@@ -7,6 +7,12 @@ import java.util.Arrays;
  * Created by Fang on 2018/1/29.
  */
 public class BucketSort {
+
+    /**
+     * @param data 待排序数组
+     * @param min 待排序数组中最小的值
+     * @param size 待排序数组的大小
+     */
     public static void bucketSort(DataWrap[] data, int min, int size){
         System.out.println("开始排序：");
         int arrayLength = data.length;
@@ -30,7 +36,7 @@ public class BucketSort {
         System.out.println(Arrays.toString(buckets));
         System.arraycopy(data,0,tmp,0,arrayLength);
         //根据buckets数组中的信息将待排序序列的各元素放入相应的位置
-        for (int j = arrayLength - 1; j >= 0; j--)
+        for (int j =  0; j < arrayLength; j++)
         {
             data[--buckets[tmp[j].data - min]] = tmp[j];
         }
