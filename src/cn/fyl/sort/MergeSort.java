@@ -40,9 +40,11 @@ public class MergeSort {
      */
     private static void merge(DataWrap[] data,int left, int mid, int right){
         DataWrap[] tmpArr = new DataWrap[data.length];
+        //mid+1是右数组第一个元素的索引
         int center = mid+1;
         //third记录中间数组的索引
         int third = left;
+        //左数组的第一个元素的索引
         int tmp = left;
         while (left <= mid && center <= right)
         {
@@ -59,8 +61,8 @@ public class MergeSort {
         //剩余部分依次放入中间数组
         while (center <= right)
         {
-            tmpArr[third++] = data[center++];
-        }
+             tmpArr[third++] = data[center++];
+    }
         while (left <= mid)
         {
             tmpArr[third++] = data[left++];
